@@ -4,8 +4,8 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Display Page</title>
-<title>Displaying message</title>
+<title>Welcome Page</title>
+<title>Welcome</title>
 <link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css"
 	rel="stylesheet">
 <link href="css/custom.css" rel="stylesheet">
@@ -82,14 +82,19 @@ div {
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 		<a class="navbar-brand" href="#">X-workz</a>
 	</nav><br>
-
+	
 	<div>
-		<form>
+		 <form action="welcome" method="post">
 
-			<h2>From, ${from}</h2>
-			<h4>Message is: ${message}</h4>
-			<h2>To, ${to}</h2>
+		<label>From: </label> <input type="text" name="fromMessage"
+			placeholder="enter from whom your sending"><br> <label>Enter
+			message: </label> <input type="text" name="message"
+			placeholder="enter message"><br> <label>To: </label> <input
+			type="text" name="toMessage" placeholder="enter to whom your sending"><br>
 
+		<div>
+			<input type="submit" value="Send" id="send">
+		</div>
 		</form>
 	</div>
 
