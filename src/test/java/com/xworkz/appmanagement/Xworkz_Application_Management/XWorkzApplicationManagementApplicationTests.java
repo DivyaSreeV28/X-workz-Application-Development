@@ -1,10 +1,10 @@
-package com.xworkz.springbootweb;
+package com.xworkz.appmanagement.Xworkz_Application_Management;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SpringbootWebApplicationTests {
+class XWorkzApplicationManagementApplicationTests {
 
 	@Test
 	void contextLoads() {

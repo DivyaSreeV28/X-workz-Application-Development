@@ -1,0 +1,14 @@
+@charset "ISO-8859-1";
+#sel {
+	width: 80%;
+	margin-left: 10%;
+	margin-right: 10%;
+}
+
+#sel1 {
+	background: skyblue;
+}
+
+select, input {
+	width: 50%;
+}

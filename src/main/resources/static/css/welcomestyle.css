@@ -1,0 +1,33 @@
+@charset "ISO-8859-1";
+.body-class{
+	min-height : 470px;
+}
+.container{
+	color: white;
+}
+.navbar-brand {
+    color: orange !important;
+}
+#sel {
+	margin-left: 20%;
+	margin-right: 20%;
+	margin-top: 5%;
+}
+
+#sel1 {
+	padding: 5%;
+	background: lightgreen;
+	margin-left: 20%;
+	margin-right: 20%;
+}
+
+#in {
+	width: 80%;
+}
+
+#env {
+	border: 2px solid black;
+	width: 30%;
+	text-align: 'center' color:white;
+	background: black;
+}
