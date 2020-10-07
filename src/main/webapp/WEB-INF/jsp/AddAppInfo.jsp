@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Add Application Info</title>
+<title>Adding App Info</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <script
@@ -14,128 +15,164 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+<script type="text/javascript">
+	$('#exampleModal').on('show.bs.modal', function(event) {
+		var button = $(event.relatedTarget) // Button that triggered the modal
+		var recipient = button.data('whatever') // Extract info from data-* attributes
+		// If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+		// Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+		var modal = $(this)
+		modal.find('.modal-title').text('New message to ' + recipient)
+		modal.find('.modal-body input').val(recipient)
+	})
+</script>
 </head>
 <body>
-	<nav class="navbar navbar-expand-sm bg-dark navbar-black">
-		<ul class="navbar-nav">
-			<li class="nav-item active"><a class="nav-link"
-				href="www.xworkz.com">X-Workz</a></li>
-		</ul>
+
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<a class="navbar-brand" href="#">X-workz</a>
 	</nav>
-	<h3>Enter Details of application management</h3>
+	<br>
 
-	<div id="sel">
-		<div id="sel1">
-			<div>
-				<!-- Button trigger modal -->
-				<button type="button" class="btn btn-primary" data-toggle="modal"
-					data-target="#exampleModalCenter">Add Environment Here</button>
-				<div class="modal fade" id="exampleModalCenter" tabindex="-1"
-					role="dialog" aria-labelledby="exampleModalCenterTitle"
-					aria-hidden="true">
-					<div class="modal-dialog modal-dialog-centered" role="document">
-						<div class="modal-content">
-							<div class="modal-header">
-								<h5 class="modal-title" id="exampleModalCenterTitle">Environment
-									Setup</h5>
-								<button type="button" class="close" data-dismiss="modal"
-									aria-label="Close">
-									<span aria-hidden="true">&times; AddEnv</span>
-								</button>
-							</div>
-							<div class="modal-body">
-								<div class="form-group">
-									<label>Select Environment : </label> <select name="environment"
-										class="form-control">
-										<option value="DEV">Development</option>
-										<option value="SIT">SIT</option>
-										<option value="UAT">UAT</option>
-										<option value="PROD">Production</option>
-									</select>
-								</div>
-								<div class="form-group">
-									<label>URL : </label> <input type="text" name="url"
-										class="form-control" />
-								</div>
-								<div class="form-group">
-									<label>Accessibility: </label> <input type="checkbox"
-										class="form-check-input" id="exampleCheck1"
-										name="accessibility"> <label class="form-check-label"
-										for="exampleCheck1">Yes</label> <label
-										class="form-check-label" for="exampleCheck1">No</label>
-								</div>
-								<div>
-									<button type="submit" class="btn btn-success">Submit</button>
-									<button type="reset" class="btn btn-danger">Cancel</button>
-								</div>
-							</div>
-							<div class="modal-footer">
-								<button type="button" class="btn btn-secondary"
-									data-dismiss="modal">Close</button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+	<form id="saveModal" action="sendModal" method="post"></form>
+	<form id="saveAppInfo" action="sendAppInfo" method="post"></form>
 
-			<form action="add" method="post">
-				<div class="form-group">
-					<label>Project Name: </label> <input type="text" name="projectName"
-						class="form-control" id="in">
+	<div class="card text-center"
+		style="width: 50rem; margin-top: 20px; margin-left: 200px;">
+		<div class="card-header">AddAppInfo</div>
+		<div class="card-body">
+
+			<div class="form-row">
+
+				<div class="form-group col-md-6">
+					<label>Project Name</label> <input type="text" class="form-control"
+						form="saveAppInfo" name="projectName" required>
 				</div>
 
-				<div class="form-group">
-					<label>Team Manager Name: </label> <input type="text"
-						name="teamManagerName" class="form-control" id="in">
+				<div class="form-group col-md-6">
+					<label>Project Team Manager</label> <input type="text" class="form-control"
+						form="saveAppInfo" name="teamManagerName">
 				</div>
 
-				<div class="form-group">
-					<label>Team Contact EmailId : </label> <input type="text"
-						name="teamContactEmail" class="form-control" id="in">
+				<div class="form-group col-md-6">
+					<label>Project Team Contact Email</label> <input type="email"
+						class="form-control" form="saveAppInfo" name="teamContactEmail"
+						required>
+				</div>
+			
+				<div class="form-group col-md-6">
+					<label>Project Version</label> <input type="text" class="form-control"
+						form="saveAppInfo" name="version">
+				</div>
+				
+				<div class="form-group col-md-6">
+					<label>Project Developed Date</label> <input type="date"
+						class="form-control" form="saveAppInfo" name="developedDate">
 				</div>
 
-				<div class="form-group">
-					<label for="id">De-Commissioned : </label> <select
-						name="deCommissined" class="form-control" id="in">
-						<option value="yes">Yes</option>
-						<option value="no">No</option>
+				<div class="form-group col-md-6">
+					<label>De-Commissioned</label> <select class="form-control"
+						form="saveAppInfo" name="deComissined" required>
+						<option value="1">YES</option>
+						<option value="0">NO</option>
 					</select>
 				</div>
 
+				<div class="form-group col-md-6">
+					<label>Project Last Release</label> <input type="date" class="form-control"
+						form="saveAppInfo" name="lastRelease">
+				</div>
+
+				<div class="form-group col-md-6">
+					<label>Project Next Release</label> <input type="date" class="form-control"
+						form="saveAppInfo" name="nextRelease">
+				</div>
+
+			</div>
+			<br>
+			<div class="form-group col-md-6">
+				<button type="button" class="btn btn-primary" data-toggle="modal"
+					data-target="#exampleModal" data-whatever="@mdo"
+					style="margin-right: 350px;">EnvSetup</button>
+				<br>
+			</div>
+			<div class="form-group col-md-6">
+				<table border="1">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>ENVIRONMENT</th>
+							<th>URL</th>
+							<th>ACCESSIBILITY</th>
+						</tr>
+					</thead>
+					<tbody>
+						<c:set var="i" value="1" />
+						<c:forEach items="${envList}" var="lists">
+							<tr>
+								<td>${i}</td>
+								<td>${lists.environment}</td>
+								<td>${lists.url}</td>
+								<td>${lists.accessibility}</td>
+							</tr>
+							<c:set var="i" value="${i+1}" />
+						</c:forEach>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<input type="submit" class="btn btn-primary" name="save" value="Add"
+			form="saveAppInfo" />
+	</div>
+	<br>
+	<br>
+	<div class="card-footer text-muted">Copy right x-workz</div>
+</body>
+<!-- Modal HTML -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+	aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Environment
+					Setup</h5>
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
 				<div class="form-group">
-					<label>Developed Date: </label> <input type="text"
-						name="developedDate" class="form-control" id="in">
+					<label>Environment:</label> <select class="form-control"
+						form="saveModal" class="col-form-label" name="environment" required>
+						<option value="dev">Development</option>
+						<option value="uat">Uat</option>
+						<option value="sit">Sit</option>
+						<option value="prod">Production</option>
+						<option value="others">Others</option>
+					</select>
 				</div>
-
 				<div class="form-group">
-					<label>Project Version: </label> <input type="text" name="version"
-						class="form-control" id="in">
+					<label for="recipient-name" class="col-form-label">URL:</label> <input
+						type="text" class="form-control" form="saveModal" name="url" />
 				</div>
-
 				<div class="form-group">
-					<label>Last Release: </label> <input type="text" name="lastRelease"
-						class="form-control" id="in">
+					<label>Accessibility</label> <select class="form-control"
+						form="saveModal" class="col-form-label" name="accessibility"
+						required>
+						<option value="1">YES</option>
+						<option value="0">NO</option>
+					</select>
 				</div>
+			</div>
+			<div class="modal-footer">
 
-				<div class="form-group">
-					<label>Next Release: </label> <input type="text" name="nextRelease"
-						class="form-control" id="in">
-				</div>
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 
-				<div>
-					<button type="submit" class="btn btn-success">Submit</button>
-					<button type="reset" class="btn btn-danger">Cancel</button>
-				</div>
-
-			</form>
+				<input type="submit" class="btn btn-primary" value="Save"
+					form="saveModal" />
+			</div>
 		</div>
 	</div>
-	<div>
-		<footer id="sticky-footer" class="py-4 bg-dark text-white-50">
-			<div class="container text-center">
-				<small>@ 2020 Copyright &copy; xworkz.com</small>
-			</div>
-		</footer>
-	</div>
-</body>
+</div>
 </html>

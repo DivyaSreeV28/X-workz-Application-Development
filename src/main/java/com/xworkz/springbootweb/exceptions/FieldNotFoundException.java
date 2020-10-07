@@ -1,4 +1,4 @@
-package com.xworkz.appmanagement.exceptions;
+package com.xworkz.springbootweb.exceptions;
 
 public class FieldNotFoundException  extends RuntimeException{
 

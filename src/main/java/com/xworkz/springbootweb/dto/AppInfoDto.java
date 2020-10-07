@@ -1,4 +1,6 @@
-package com.xworkz.appmanagement.dto;
+package com.xworkz.springbootweb.dto;
+
+import java.util.Date;
 
 import org.apache.log4j.Logger;
 
@@ -9,13 +11,13 @@ public class AppInfoDto {
 	private String teamManagerName;
 	private String teamContactEmail;
 	private Boolean deComissined;
-	private String developedDate;
+	private Date developedDate;
 	private String version;
-	private String lastRelease;
-	private String nextRelease;
+	private Date lastRelease;
+	private Date nextRelease;
 	private String environment;
 	private String url;
-	private String accessibility;
+	private Boolean accessibility;
 	
 	private static final Logger logger=Logger.getLogger(AppInfoDto.class);
 	
@@ -50,10 +52,10 @@ public class AppInfoDto {
 	public void setDeComissined(Boolean deComissined) {
 		this.deComissined = deComissined;
 	}
-	public String getDevelopedDate() {
+	public Date getDevelopedDate() {
 		return developedDate;
 	}
-	public void setDevelopedDate(String developedDate) {
+	public void setDevelopedDate(Date developedDate) {
 		this.developedDate = developedDate;
 	}
 	public String getVersion() {
@@ -62,16 +64,16 @@ public class AppInfoDto {
 	public void setVersion(String version) {
 		this.version = version;
 	}
-	public String getLastRelease() {
+	public Date getLastRelease() {
 		return lastRelease;
 	}
-	public void setLastRelease(String lastRelease) {
+	public void setLastRelease(Date lastRelease) {
 		this.lastRelease = lastRelease;
 	}
-	public String getNextRelease() {
+	public Date getNextRelease() {
 		return nextRelease;
 	}
-	public void setNextRelease(String nextRelease) {
+	public void setNextRelease(Date nextRelease) {
 		this.nextRelease = nextRelease;
 	}
 	public String getEnvironment() {
@@ -86,18 +88,18 @@ public class AppInfoDto {
 	public void setUrl(String url) {
 		this.url = url;
 	}
-	public String getAccessibility() {
+	public Boolean getAccessibility() {
 		return accessibility;
 	}
-	public void setAccessibility(String accessibility) {
+	public void setAccessibility(Boolean accessibility) {
 		this.accessibility = accessibility;
 	}
 	public AppInfoDto() {
 		logger.info("Created AppInfoDto");
 	}
 	public AppInfoDto(String projectName, String teamManagerName, String teamContactEmail, Boolean deComissined,
-			String developedDate, String version, String lastRelease, String nextRelease, String environment,
-			String url, String accessibility) {
+			Date developedDate, String version, Date lastRelease, Date nextRelease, String environment,
+			String url, Boolean accessibility) {
 		super();
 		this.projectName = projectName;
 		this.teamManagerName = teamManagerName;

@@ -4,11 +4,11 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Welcome Page</title>
+<title>Display Page</title>
+<title>Displaying message</title>
 <!-- <link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css"
-	rel="stylesheet">  -->
-	
-<link href="/css/cssstyle.css" rel="stylesheet">
+	rel="stylesheet"> -->
+<link href="/WEB-INF/css/cssstyles.css" rel="stylesheet">
 
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
@@ -24,22 +24,15 @@
 
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 		<a class="navbar-brand" href="#">X-workz</a>
-		<li class="nav-item active"><a class="nav-link" href="AddAppInfo.jsp">Add App Info</a>
 	</nav><br>
-	
+
 	<div>
-		 <form action="welcome" method="post">
+		<form>
 
-		<label>From: </label> <input type="text" name="fromMessage"
-			placeholder="enter from whom your sending"><br> <label>Enter
-			message: </label> <input type="text" name="message"
-			placeholder="enter message"><br> <label>To: </label> <input
-			type="text" name="toMessage" placeholder="enter to whom your sending"><br>
+			<h2>From, ${fromMessage}</h2>
+			<h4>Message is: ${message}</h4>
+			<h2>To, ${toMessage}</h2>
 
-		<div>
-			<input type="submit" value="Send" id="send">
-			<a class="nav-link" href="AddAppInfo.jsp">AddAppInfo</a>
-		</div>
 		</form>
 	</div>
 

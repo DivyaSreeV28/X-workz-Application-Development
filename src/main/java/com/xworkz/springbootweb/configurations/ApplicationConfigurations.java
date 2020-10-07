@@ -1,4 +1,4 @@
-package com.xworkz.appmanagement.configurations;
+package com.xworkz.springbootweb.configurations;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
