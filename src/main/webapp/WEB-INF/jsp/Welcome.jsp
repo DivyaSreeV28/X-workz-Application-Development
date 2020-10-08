@@ -24,7 +24,7 @@
 
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 		<a class="navbar-brand" href="#">X-workz</a>
-		<li class="nav-item active"><a class="nav-link" href="AddAppInfo.jsp">Add App Info</a>
+		<a class="nav-link" href="AddAppInfo.jsp">Add App Info</a>
 	</nav><br>
 	
 	<div>
@@ -35,9 +35,9 @@
 			message: </label> <input type="text" name="message"
 			placeholder="enter message"><br> <label>To: </label> <input
 			type="text" name="toMessage" placeholder="enter to whom your sending"><br>
-
+			<br>	
 		<div>
-			<input type="submit" value="Send" id="send">
+			<input type="button" value="Send" id="send">
 			<a class="nav-link" href="AddAppInfo.jsp">AddAppInfo</a>
 		</div>
 		</form>

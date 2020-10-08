@@ -114,10 +114,10 @@ public class WelcomeController {
 				model.addAttribute("managerName", appInfoDto.getTeamManagerName());
 				model.addAttribute("teamEmailId", appInfoDto.getTeamContactEmail());
 				model.addAttribute("developedDate", appInfoDto.getDevelopedDate());
+				model.addAttribute("deCommissined", appInfoDto.getDeCommissined());
 				model.addAttribute("version", appInfoDto.getVersion());
 				model.addAttribute("lastRelease", appInfoDto.getLastRelease());
 				model.addAttribute("nextRelease", appInfoDto.getNextRelease());
-				model.addAttribute("deComissined", appInfoDto.getDeComissined());
 				
 				logger.info("Directing to success.jsp");
 				return "Success";

@@ -43,7 +43,7 @@
 					</button>
 				</div>
 				<div class="modal-body">
-					<form id="saveModal" action="/sendModal" method="post"></form>
+					<form id="saveModal" action="sendModal" method="post"></form>
 					<div class="form-group">
 						<label>Environment:</label> <select class="form-control"
 							form="saveModal" class="col-form-label" name="environment"
@@ -71,7 +71,7 @@
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary"
 						data-dismiss="modal">Close</button>
-					<input type="submit" class="btn btn-primary" name="save"
+					<input type="button" class="btn btn-primary" name="save"
 						value="Save" form="saveModal" />
 				</div>
 			</div>

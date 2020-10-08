@@ -72,7 +72,7 @@
 
 				<div class="form-group col-md-6">
 					<label>De-Commissioned</label> <select class="form-control"
-						form="saveAppInfo" name="deComissined" required>
+						form="saveAppInfo" name="deCommissined" required>
 						<option value="1">YES</option>
 						<option value="0">NO</option>
 					</select>
@@ -108,7 +108,7 @@
 					</thead>
 					<tbody>
 						<c:set var="i" value="1" />
-						<c:forEach items="${envList}" var="lists">
+						<c:forEach items="${modalList}" var="lists">
 							<tr>
 								<td>${i}</td>
 								<td>${lists.environment}</td>

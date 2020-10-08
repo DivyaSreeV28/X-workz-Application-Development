@@ -10,7 +10,7 @@ public class AppInfoDto {
 	private String projectName;
 	private String teamManagerName;
 	private String teamContactEmail;
-	private Boolean deComissined;
+	private Boolean deCommissined;
 	private Date developedDate;
 	private String version;
 	private Date lastRelease;
@@ -21,90 +21,115 @@ public class AppInfoDto {
 	
 	private static final Logger logger=Logger.getLogger(AppInfoDto.class);
 	
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
-	public String getProjectName() {
-		return projectName;
-	}
-	public void setProjectName(String projectName) {
-		this.projectName = projectName;
-	}
-	public String getTeamManagerName() {
-		return teamManagerName;
-	}
-	public void setTeamManagerName(String teamManagerName) {
-		this.teamManagerName = teamManagerName;
-	}
-	public String getTeamContactEmail() {
-		return teamContactEmail;
-	}
-	public void setTeamContactEmail(String teamContactEmail) {
-		this.teamContactEmail = teamContactEmail;
-	}
-	
-	public Boolean getDeComissined() {
-		return deComissined;
-	}
-	public void setDeComissined(Boolean deComissined) {
-		this.deComissined = deComissined;
-	}
-	public Date getDevelopedDate() {
-		return developedDate;
-	}
-	public void setDevelopedDate(Date developedDate) {
-		this.developedDate = developedDate;
-	}
-	public String getVersion() {
-		return version;
-	}
-	public void setVersion(String version) {
-		this.version = version;
-	}
-	public Date getLastRelease() {
-		return lastRelease;
-	}
-	public void setLastRelease(Date lastRelease) {
-		this.lastRelease = lastRelease;
-	}
-	public Date getNextRelease() {
-		return nextRelease;
-	}
-	public void setNextRelease(Date nextRelease) {
-		this.nextRelease = nextRelease;
-	}
-	public String getEnvironment() {
-		return environment;
-	}
-	public void setEnvironment(String environment) {
-		this.environment = environment;
-	}
-	public String getUrl() {
-		return url;
-	}
-	public void setUrl(String url) {
-		this.url = url;
-	}
-	public Boolean getAccessibility() {
-		return accessibility;
-	}
-	public void setAccessibility(Boolean accessibility) {
-		this.accessibility = accessibility;
-	}
 	public AppInfoDto() {
 		logger.info("Created AppInfoDto");
 	}
-	public AppInfoDto(String projectName, String teamManagerName, String teamContactEmail, Boolean deComissined,
-			Date developedDate, String version, Date lastRelease, Date nextRelease, String environment,
-			String url, Boolean accessibility) {
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getProjectName() {
+		return projectName;
+	}
+
+	public void setProjectName(String projectName) {
+		this.projectName = projectName;
+	}
+
+	public String getTeamManagerName() {
+		return teamManagerName;
+	}
+
+	public void setTeamManagerName(String teamManagerName) {
+		this.teamManagerName = teamManagerName;
+	}
+
+	public String getTeamContactEmail() {
+		return teamContactEmail;
+	}
+
+	public void setTeamContactEmail(String teamContactEmail) {
+		this.teamContactEmail = teamContactEmail;
+	}
+
+	public Boolean getDeCommissined() {
+		return deCommissined;
+	}
+
+	public void setDeCommissined(Boolean deCommissined) {
+		this.deCommissined = deCommissined;
+	}
+
+	public Date getDevelopedDate() {
+		return developedDate;
+	}
+
+	public void setDevelopedDate(Date developedDate) {
+		this.developedDate = developedDate;
+	}
+
+	public String getVersion() {
+		return version;
+	}
+
+	public void setVersion(String version) {
+		this.version = version;
+	}
+
+	public Date getLastRelease() {
+		return lastRelease;
+	}
+
+	public void setLastRelease(Date lastRelease) {
+		this.lastRelease = lastRelease;
+	}
+
+	public Date getNextRelease() {
+		return nextRelease;
+	}
+
+	public void setNextRelease(Date nextRelease) {
+		this.nextRelease = nextRelease;
+	}
+
+	public String getEnvironment() {
+		return environment;
+	}
+
+	public void setEnvironment(String environment) {
+		this.environment = environment;
+	}
+
+	public String getUrl() {
+		return url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
+	}
+
+	public Boolean getAccessibility() {
+		return accessibility;
+	}
+
+	public void setAccessibility(Boolean accessibility) {
+		this.accessibility = accessibility;
+	}
+
+	public AppInfoDto(int id, String projectName, String teamManagerName, String teamContactEmail,
+			Boolean deCommissined, Date developedDate, String version, Date lastRelease, Date nextRelease,
+			String environment, String url, Boolean accessibility) {
 		super();
+		this.id = id;
 		this.projectName = projectName;
 		this.teamManagerName = teamManagerName;
 		this.teamContactEmail = teamContactEmail;
-		this.deComissined = deComissined;
+		this.deCommissined = deCommissined;
 		this.developedDate = developedDate;
 		this.version = version;
 		this.lastRelease = lastRelease;
@@ -113,6 +138,5 @@ public class AppInfoDto {
 		this.url = url;
 		this.accessibility = accessibility;
 	}
-	
-	
+
 }

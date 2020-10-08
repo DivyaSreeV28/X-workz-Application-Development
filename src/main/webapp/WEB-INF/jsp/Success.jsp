@@ -31,7 +31,7 @@
 	<h3>Project Version: ${version}</h3>
 	<h3>Project Last Released Date: ${lastRelease}</h3>
 	<h3>Project Next Release Date: ${nextRelease}</h3>
-	<h3>Is Project De-Comissined: ${deComissined}</h3>
+	<h3>Is Project De-Commissined: ${deCommissined}</h3>
 	
 </div>
 <div>
