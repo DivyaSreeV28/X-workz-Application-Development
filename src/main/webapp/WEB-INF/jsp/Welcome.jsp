@@ -5,10 +5,10 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Welcome Page</title>
-<title>Welcome</title>
-<link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css"
-	rel="stylesheet">
-<link href="css/custom.css" rel="stylesheet">
+<!-- <link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css"
+	rel="stylesheet">  -->
+	
+<link href="/css/cssstyle.css" rel="stylesheet">
 
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
@@ -19,68 +19,12 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
-<style>
-input[type=text], select {
-	width: 30%;
-	padding: 12px 20px;
-	margin: 8px 0;
-	display: inline-block;
-	border: 1px solid #ccc;
-	border-radius: 4px;
-	box-sizing: border-box;
-}
-
-input[type=submit] {
-	background-color: green;
-	color: white;
-	padding: 14px 20px;
-	margin: 6px 0;
-	border: none;
-	border-radius: 4px;
-	cursor: pointer;
-}
-
-input[type=reset] {
-	width: 100%;
-	background-color: red;
-	color: white;
-	padding: 14px 20px;
-	margin: 8px 0;
-	border: none;
-	border-radius: 4px;
-	cursor: pointer;
-}
-
-input[type=number] {
-	width: 10%;
-	color: white;
-	padding: 14px 20px;
-	margin: 8px 0;
-	border: none;
-	border-radius: 4px;
-	cursor: pointer;
-}
-
-input[type=submit]:hover {
-	background-color: #45a049;
-}
-
-div {
-	border-radius: 5px;
-	background-color: #f2f2f2;
-	padding: 50px;
-}
-
-#send {
-	background-color: green;
-	width: 25%;
-}
-</style>
 </head>
 <body>
 
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 		<a class="navbar-brand" href="#">X-workz</a>
+		<a class="nav-link" href="AddAppInfo.jsp">Add App Info</a>
 	</nav><br>
 	
 	<div>
@@ -91,9 +35,10 @@ div {
 			message: </label> <input type="text" name="message"
 			placeholder="enter message"><br> <label>To: </label> <input
 			type="text" name="toMessage" placeholder="enter to whom your sending"><br>
-
+			<br>	
 		<div>
-			<input type="submit" value="Send" id="send">
+			<input type="button" value="Send" id="send">
+			<a class="nav-link" href="AddAppInfo.jsp">AddAppInfo</a>
 		</div>
 		</form>
 	</div>

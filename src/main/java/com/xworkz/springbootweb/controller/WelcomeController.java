@@ -23,7 +23,7 @@ public class WelcomeController {
 	public WelcomeController() {
 		logger.info("Created " + this.getClass().getSimpleName());
 	}
-
+	
 	@RequestMapping("onclick")
 	public String onClick() {
 		logger.info("Invoked onClick");

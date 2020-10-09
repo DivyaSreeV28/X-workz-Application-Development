@@ -1,5 +1,3 @@
-@charset "ISO-8859-1";
-<style>
 input[type=text], select {
 	width: 30%;
 	padding: 12px 20px;
@@ -46,7 +44,7 @@ input[type=submit]:hover {
 }
 
 div {
-	border-radius: 5px;
+	border-radius: 5-px;
 	background-color: #f2f2f2;
 	padding: 50px;
 }
@@ -59,4 +57,9 @@ div {
 	margin-left: 10%;
 	width: 20%;
 }
-</style>
+
+#send {
+	background-color: green;
+	width: 25%;
+}
+
