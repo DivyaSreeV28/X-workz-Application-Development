@@ -1,11 +1,11 @@
 package com.xworkz.springbootweb.service;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
 import org.apache.log4j.Logger;
-import org.modelmapper.ModelMapper;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,8 +21,8 @@ public class AppInfoServiceImpl implements AppInfoService {
 	@Autowired
 	private AppInfoRepository appInfoRepo;
 	
-	@Autowired
-	private ModelMapper modelMapper;
+//	@Autowired
+//	private ModelMapper modelMapper;
 	
 	private static final Logger logger = Logger.getLogger(AppInfoServiceImpl.class);
 
@@ -34,6 +34,9 @@ public class AppInfoServiceImpl implements AppInfoService {
 
 				AppInfoEntity appInfoEntity = new AppInfoEntity();
 				List<EnvironmentInfoEntity> envEntityList = new ArrayList<>();
+				
+				appInfoDto.setCreatedTime(LocalDate.now());
+				appInfoDto.setCreatedBy("Dell User");
 
 				//modelMapper.map(appInfoDto, AppInfoEntity.class);
 				BeanUtils.copyProperties(appInfoDto, appInfoEntity);
