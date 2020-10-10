@@ -1,5 +1,6 @@
 package com.xworkz.springbootweb.dto;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 import org.apache.log4j.Logger;
@@ -15,6 +16,10 @@ public class AppInfoDto {
 	private String version;
 	private Date lastRelease;
 	private Date nextRelease;
+	private LocalDate createdTime;
+	private String createdBy;
+	private LocalDate updatedTime;
+	private String updatedBy;
 	private String environment;
 	private String url;
 	private Boolean accessibility;
@@ -105,6 +110,38 @@ public class AppInfoDto {
 		this.environment = environment;
 	}
 
+	public LocalDate getCreatedTime() {
+		return createdTime;
+	}
+
+	public void setCreatedTime(LocalDate createdTime) {
+		this.createdTime = createdTime;
+	}
+
+	public String getCreatedBy() {
+		return createdBy;
+	}
+
+	public void setCreatedBy(String createdBy) {
+		this.createdBy = createdBy;
+	}
+
+	public LocalDate getUpdatedTime() {
+		return updatedTime;
+	}
+
+	public void setUpdatedTime(LocalDate updatedTime) {
+		this.updatedTime = updatedTime;
+	}
+
+	public String getUpdatedBy() {
+		return updatedBy;
+	}
+
+	public void setUpdatedBy(String updatedBy) {
+		this.updatedBy = updatedBy;
+	}
+
 	public String getUrl() {
 		return url;
 	}
@@ -121,11 +158,10 @@ public class AppInfoDto {
 		this.accessibility = accessibility;
 	}
 
-	public AppInfoDto(int id, String projectName, String teamManagerName, String teamContactEmail,
-			Boolean deCommissined, Date developedDate, String version, Date lastRelease, Date nextRelease,
-			String environment, String url, Boolean accessibility) {
+	public AppInfoDto(String projectName, String teamManagerName, String teamContactEmail, Boolean deCommissined,
+			Date developedDate, String version, Date lastRelease, Date nextRelease, LocalDate createdTime, String createdBy,
+			LocalDate updatedTime, String updatedBy, String environment, String url, Boolean accessibility) {
 		super();
-		this.id = id;
 		this.projectName = projectName;
 		this.teamManagerName = teamManagerName;
 		this.teamContactEmail = teamContactEmail;
@@ -134,6 +170,10 @@ public class AppInfoDto {
 		this.version = version;
 		this.lastRelease = lastRelease;
 		this.nextRelease = nextRelease;
+		this.createdTime = createdTime;
+		this.createdBy = createdBy;
+		this.updatedTime = updatedTime;
+		this.updatedBy = updatedBy;
 		this.environment = environment;
 		this.url = url;
 		this.accessibility = accessibility;

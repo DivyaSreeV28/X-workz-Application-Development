@@ -1,6 +1,7 @@
 package com.xworkz.springbootweb.entity;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -48,6 +49,14 @@ public class AppInfoEntity implements Serializable{
 	private Date lastRelease;
 	@Column(name="NEXT_RELEASE")
 	private Date nextRelease;
+	@Column(name="CREATED_TIME")
+	private LocalDate createdTime;
+	@Column(name="CREATED_BY")
+	private String createdBy;
+	@Column(name="UPDATED_TIME")
+	private LocalDate updatedTime;
+	@Column(name="UPDATED_BY")
+	private String updatedBy;
 	
 	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL,targetEntity=EnvironmentInfoEntity.class,mappedBy ="appInfoEntity")
 	private List<EnvironmentInfoEntity> environmentInfoEntity;
@@ -142,11 +151,42 @@ public class AppInfoEntity implements Serializable{
 		return serialVersionUID;
 	}
 
-	public AppInfoEntity(int id, String projectName, String teamManagerName, String teamContactEmail,
-			Boolean deCommissined, Date developedDate, String version, Date lastRelease, Date nextRelease,
-			List<EnvironmentInfoEntity> environmentInfoEntity) {
+	public LocalDate getCreatedTime() {
+		return createdTime;
+	}
+
+	public void setCreatedTime(LocalDate createdTime) {
+		this.createdTime = createdTime;
+	}
+
+	public String getCreatedBy() {
+		return createdBy;
+	}
+
+	public void setCreatedBy(String createdBy) {
+		this.createdBy = createdBy;
+	}
+
+	public LocalDate getUpdatedTime() {
+		return updatedTime;
+	}
+
+	public void setUpdatedTime(LocalDate updatedTime) {
+		this.updatedTime = updatedTime;
+	}
+
+	public String getUpdatedBy() {
+		return updatedBy;
+	}
+
+	public void setUpdatedBy(String updatedBy) {
+		this.updatedBy = updatedBy;
+	}
+
+	public AppInfoEntity(String projectName, String teamManagerName, String teamContactEmail, Boolean deCommissined,
+			Date developedDate, String version, Date lastRelease, Date nextRelease, LocalDate createdTime, String createdBy,
+			LocalDate updatedTime, String updatedBy, List<EnvironmentInfoEntity> environmentInfoEntity) {
 		super();
-		this.id = id;
 		this.projectName = projectName;
 		this.teamManagerName = teamManagerName;
 		this.teamContactEmail = teamContactEmail;
@@ -155,6 +195,10 @@ public class AppInfoEntity implements Serializable{
 		this.version = version;
 		this.lastRelease = lastRelease;
 		this.nextRelease = nextRelease;
+		this.createdTime = createdTime;
+		this.createdBy = createdBy;
+		this.updatedTime = updatedTime;
+		this.updatedBy = updatedBy;
 		this.environmentInfoEntity = environmentInfoEntity;
 	}
 	
