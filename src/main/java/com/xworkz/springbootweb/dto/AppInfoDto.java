@@ -2,6 +2,7 @@ package com.xworkz.springbootweb.dto;
 
 import java.time.LocalDate;
 import java.util.Date;
+import java.util.List;
 
 import org.apache.log4j.Logger;
 
@@ -16,13 +17,13 @@ public class AppInfoDto {
 	private String version;
 	private Date lastRelease;
 	private Date nextRelease;
-	private LocalDate createdTime;
+	private LocalDate createdDate;
 	private String createdBy;
-	private LocalDate updatedTime;
+	private LocalDate updatedDate;
 	private String updatedBy;
-	private String environment;
-	private String url;
-	private Boolean accessibility;
+	private List<String> environment;
+	private List<String> url;
+	private List<Boolean> accessibility;
 	
 	private static final Logger logger=Logger.getLogger(AppInfoDto.class);
 	
@@ -102,20 +103,14 @@ public class AppInfoDto {
 		this.nextRelease = nextRelease;
 	}
 
-	public String getEnvironment() {
-		return environment;
+	
+
+	public LocalDate getCreatedDate() {
+		return createdDate;
 	}
 
-	public void setEnvironment(String environment) {
-		this.environment = environment;
-	}
-
-	public LocalDate getCreatedTime() {
-		return createdTime;
-	}
-
-	public void setCreatedTime(LocalDate createdTime) {
-		this.createdTime = createdTime;
+	public void setCreatedDate(LocalDate createdDate) {
+		this.createdDate = createdDate;
 	}
 
 	public String getCreatedBy() {
@@ -126,12 +121,12 @@ public class AppInfoDto {
 		this.createdBy = createdBy;
 	}
 
-	public LocalDate getUpdatedTime() {
-		return updatedTime;
+	public LocalDate getUpdatedDate() {
+		return updatedDate;
 	}
 
-	public void setUpdatedTime(LocalDate updatedTime) {
-		this.updatedTime = updatedTime;
+	public void setUpdatedDate(LocalDate updatedDate) {
+		this.updatedDate = updatedDate;
 	}
 
 	public String getUpdatedBy() {
@@ -142,25 +137,34 @@ public class AppInfoDto {
 		this.updatedBy = updatedBy;
 	}
 
-	public String getUrl() {
+	public List<String> getEnvironment() {
+		return environment;
+	}
+
+	public void setEnvironment(List<String> environment) {
+		this.environment = environment;
+	}
+
+	public List<String> getUrl() {
 		return url;
 	}
 
-	public void setUrl(String url) {
+	public void setUrl(List<String> url) {
 		this.url = url;
 	}
 
-	public Boolean getAccessibility() {
+	public List<Boolean> getAccessibility() {
 		return accessibility;
 	}
 
-	public void setAccessibility(Boolean accessibility) {
+	public void setAccessibility(List<Boolean> accessibility) {
 		this.accessibility = accessibility;
 	}
 
 	public AppInfoDto(String projectName, String teamManagerName, String teamContactEmail, Boolean deCommissined,
-			Date developedDate, String version, Date lastRelease, Date nextRelease, LocalDate createdTime, String createdBy,
-			LocalDate updatedTime, String updatedBy, String environment, String url, Boolean accessibility) {
+			Date developedDate, String version, Date lastRelease, Date nextRelease, LocalDate createdTime,
+			String createdBy, LocalDate updatedTime, String updatedBy, List<String> environment, List<String> url,
+			List<Boolean> accessibility) {
 		super();
 		this.projectName = projectName;
 		this.teamManagerName = teamManagerName;
@@ -170,9 +174,9 @@ public class AppInfoDto {
 		this.version = version;
 		this.lastRelease = lastRelease;
 		this.nextRelease = nextRelease;
-		this.createdTime = createdTime;
+		this.createdDate = createdTime;
 		this.createdBy = createdBy;
-		this.updatedTime = updatedTime;
+		this.updatedDate = updatedTime;
 		this.updatedBy = updatedBy;
 		this.environment = environment;
 		this.url = url;

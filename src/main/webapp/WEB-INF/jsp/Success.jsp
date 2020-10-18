@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Enterprise-Project</title>
+<title>Success Page</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -22,16 +22,16 @@
   </ul>
 </nav>
 <div>
-	<h1>Successfully saved application information into db</h1><br>
+	<h2>${status}</h2><br>
 	
-	<h3>Project Name: ${projectName}</h3>
-	<h3>Project Team Manager Name: ${managerName}</h3>
-	<h3>Project Team EmailId: ${teamEmailId}</h3>
-	<h3>Project Developed Date: ${developedDate}</h3>
-	<h3>Project Version: ${version}</h3>
-	<h3>Project Last Released Date: ${lastRelease}</h3>
-	<h3>Project Next Release Date: ${nextRelease}</h3>
-	<h3>Is Project De-Commissined: ${deCommissined}</h3>
+	<h5>${projectName}</h5>
+	<h5>${managerName}</h5>
+	<h5>${teamEmailId}</h5>
+	<h5>${developedDate}</h5>
+	<h5>${version}</h5>
+	<h5>${lastRelease}</h5>
+	<h5>${nextRelease}</h5>
+	<h5>${deCommissined}</h5>
 	
 </div>
 <div>

@@ -29,9 +29,9 @@
 	<div>
 		<form>
 
-			<h2>From, ${fromMessage}</h2>
-			<h4>Message is: ${message}</h4>
-			<h2>To, ${toMessage}</h2>
+			<h2>${fromMessage}</h2>
+			<h4>${message}</h4>
+			<h2>${toMessage}</h2>
 
 		</form>
 	</div>

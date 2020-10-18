@@ -13,6 +13,7 @@ import com.xworkz.springbootweb.entity.MessageEntity;
 import com.xworkz.springbootweb.service.MessageService;
 
 @Controller
+//@RequestMapping("/")
 public class WelcomeController {
 	
 	private static final Logger logger = Logger.getLogger(WelcomeController.class);
@@ -41,9 +42,9 @@ public class WelcomeController {
 				MessageEntity fetechedMessage= messageService.saveMessage(messageDto);
 				logger.info(fetechedMessage);
 				
-				model.addAttribute("fromMessage", messageDto.getFromMessage());
-				model.addAttribute("message", messageDto.getMessage());
-				model.addAttribute("toMessage", messageDto.getToMessage());
+				model.addAttribute("fromMessage", "From, "+messageDto.getFromMessage());
+				model.addAttribute("message", "Message is: "+messageDto.getMessage());
+				model.addAttribute("toMessage", "To, "+messageDto.getToMessage());
 				
 				logger.info("Directing to DisplayMessage.jsp");
 				return "DisplayMessage";

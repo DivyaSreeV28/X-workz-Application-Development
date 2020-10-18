@@ -25,6 +25,7 @@
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 		<a class="navbar-brand" href="#">X-workz</a>
 		<a class="nav-link" href="AddAppInfo.jsp">Add App Info</a>
+		<a class="nav-link" href="AddBulkAppInfo.jsp">Bulk Upload</a>
 	</nav><br>
 	
 	<div>

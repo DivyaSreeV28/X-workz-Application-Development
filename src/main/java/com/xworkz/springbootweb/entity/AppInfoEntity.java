@@ -49,12 +49,12 @@ public class AppInfoEntity implements Serializable{
 	private Date lastRelease;
 	@Column(name="NEXT_RELEASE")
 	private Date nextRelease;
-	@Column(name="CREATED_TIME")
-	private LocalDate createdTime;
+	@Column(name="CREATED_DATE")
+	private LocalDate createdDate;
 	@Column(name="CREATED_BY")
 	private String createdBy;
-	@Column(name="UPDATED_TIME")
-	private LocalDate updatedTime;
+	@Column(name="UPDATED_DATE")
+	private LocalDate updatedDate;
 	@Column(name="UPDATED_BY")
 	private String updatedBy;
 	
@@ -151,12 +151,14 @@ public class AppInfoEntity implements Serializable{
 		return serialVersionUID;
 	}
 
-	public LocalDate getCreatedTime() {
-		return createdTime;
+	
+
+	public LocalDate getCreatedDate() {
+		return createdDate;
 	}
 
-	public void setCreatedTime(LocalDate createdTime) {
-		this.createdTime = createdTime;
+	public void setCreatedDate(LocalDate createdDate) {
+		this.createdDate = createdDate;
 	}
 
 	public String getCreatedBy() {
@@ -167,12 +169,13 @@ public class AppInfoEntity implements Serializable{
 		this.createdBy = createdBy;
 	}
 
-	public LocalDate getUpdatedTime() {
-		return updatedTime;
+	
+	public LocalDate getUpdatedDate() {
+		return updatedDate;
 	}
 
-	public void setUpdatedTime(LocalDate updatedTime) {
-		this.updatedTime = updatedTime;
+	public void setUpdatedDate(LocalDate updatedDate) {
+		this.updatedDate = updatedDate;
 	}
 
 	public String getUpdatedBy() {
@@ -184,8 +187,9 @@ public class AppInfoEntity implements Serializable{
 	}
 
 	public AppInfoEntity(String projectName, String teamManagerName, String teamContactEmail, Boolean deCommissined,
-			Date developedDate, String version, Date lastRelease, Date nextRelease, LocalDate createdTime, String createdBy,
-			LocalDate updatedTime, String updatedBy, List<EnvironmentInfoEntity> environmentInfoEntity) {
+			Date developedDate, String version, Date lastRelease, Date nextRelease, LocalDate createdDate,
+			String createdBy, LocalDate updatedDate, String updatedBy,
+			List<EnvironmentInfoEntity> environmentInfoEntity) {
 		super();
 		this.projectName = projectName;
 		this.teamManagerName = teamManagerName;
@@ -195,9 +199,9 @@ public class AppInfoEntity implements Serializable{
 		this.version = version;
 		this.lastRelease = lastRelease;
 		this.nextRelease = nextRelease;
-		this.createdTime = createdTime;
+		this.createdDate = createdDate;
 		this.createdBy = createdBy;
-		this.updatedTime = updatedTime;
+		this.updatedDate = updatedDate;
 		this.updatedBy = updatedBy;
 		this.environmentInfoEntity = environmentInfoEntity;
 	}

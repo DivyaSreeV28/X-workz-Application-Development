@@ -23,6 +23,7 @@
 		<modelmapper.version>2.3.5</modelmapper.version>
 		<mysql.version>8.0.18</mysql.version>
 		<jstl.version>1.2</jstl.version>
+		<xml.version>4.0.1</xml.version>
 		<tomcatjasper.version>9.0.38</tomcatjasper.version>
 	</properties>
 
@@ -68,7 +69,7 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>${mysql.version}</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.modelmapper</groupId>
 			<artifactId>modelmapper</artifactId>
@@ -80,19 +81,22 @@
 			<artifactId>jstl</artifactId>
 			<version>${jstl.version}</version>
 		</dependency>
-		
-		<!-- <dependency>
-			<groupId>ch.qos.logback</groupId>               its for log to change logging level
+		<dependency>
+			<groupId>ch.qos.logback</groupId>               <!-- its for log to change logging level -->
 			<artifactId>logback-classic</artifactId>
 		</dependency>
+		<!-- for handling .xls files (older format) -->
 		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>jul-to-slf4j</artifactId>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>${xml.version}</version>
 		</dependency>
+		<!-- for handling .xlsx files (newer format) -->
 		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>log4j-over-slf4j</artifactId>
-		</dependency> -->
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>${xml.version}</version>
+		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -105,7 +109,6 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-
 	</dependencies>
 
 	<build>

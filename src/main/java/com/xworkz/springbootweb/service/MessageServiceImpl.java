@@ -3,7 +3,6 @@ package com.xworkz.springbootweb.service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import java.util.Optional;
 
 import org.apache.log4j.Logger;
 import org.modelmapper.ModelMapper;
@@ -68,77 +67,77 @@ public class MessageServiceImpl implements MessageService {
 
 	}
 
-	@Override
-	public MessageEntity getMessagesById(int id) {
-		Optional<MessageEntity> messageList =null;
-		try {
-			logger.info("Started: getMessagesById from MessageServiceImpl");
-			messageRepository.findById((long) id);
-
-			if (Objects.nonNull(messageList)) {
-				return messageList.get();
-			}else {
-				throw new MessageNotFoundException("Message for given id: "+id+" not found");
-			}
-		} catch (Exception e) {
-			logger.error("Exception in getMessagesById ", e);
-		} 
-		logger.info("Ended: getMessagesById from MessageServiceImpl");
-		return messageList.get();
-	}
-
-	@Override
-	public MessageEntity createOrUpdateMessage(MessageDto messageDto) {
-		MessageEntity messageEntity=null;
-		try {
-			logger.info("Started: createOrUpdateMessage from MessageServiceImpl");
-			if (Objects.nonNull(messageDto)) {
-				messageEntity=modelMapper.map(messageDto, MessageEntity.class);
-				
-				Optional<MessageEntity> message = messageRepository.findById((long) messageDto.getId());
-
-				if (message.isPresent()) {
-					MessageEntity fetchedMsgEntity = message.get();
-					fetchedMsgEntity.setFromMessage(messageDto.getFromMessage());
-					fetchedMsgEntity.setMessage(messageDto.getMessage());
-					fetchedMsgEntity.setToMessage(messageDto.getToMessage());
-
-					fetchedMsgEntity = messageRepository.save(fetchedMsgEntity);
-
-					return fetchedMsgEntity;
-				} else {
-					messageEntity = messageRepository.save(messageEntity);
-
-					return messageEntity;
-				}
-			} else {
-				messageEntity = messageRepository.save(messageEntity);
-				return messageEntity;
-			}
-		} catch (Exception e) {
-			logger.error("Exception in createOrUpdateMessage ", e);
-		}
-		logger.info("Ended: createOrUpdateMessage from MessageServiceImpl");
-		return messageEntity;
-	}
-
-	@Override
-	public void deleteMessageById(int id) {
-		try {
-			logger.info("Started: deleteMessageById from MessageServiceImpl");
-			Optional<MessageEntity> messageEntity = messageRepository.findById((long) id);
-
-			if (messageEntity.isPresent()) {
-				messageRepository.deleteById((long) id);
-				logger.info("Deleted "+id);
-			}else {
-				throw new MessageNotFoundException("Message for given id: "+id+" not found");
-			}
-			
-		} catch (Exception e) {
-			logger.error("Exception in deleteMessageById ", e);
-		}
-		logger.info("Ended: deleteMessageById from MessageServiceImpl");
-	}
+//	@Override
+//	public MessageEntity getMessagesById(int id) {
+//		Optional<MessageEntity> messageList =null;
+//		try {
+//			logger.info("Started: getMessagesById from MessageServiceImpl");
+//			messageRepository.findById((long) id);
+//
+//			if (Objects.nonNull(messageList)) {
+//				return messageList.get();
+//			}else {
+//				throw new MessageNotFoundException("Message for given id: "+id+" not found");
+//			}
+//		} catch (Exception e) {
+//			logger.error("Exception in getMessagesById ", e);
+//		} 
+//		logger.info("Ended: getMessagesById from MessageServiceImpl");
+//		return messageList.get();
+//	}
+//
+//	@Override
+//	public MessageEntity createOrUpdateMessage(MessageDto messageDto) {
+//		MessageEntity messageEntity=null;
+//		try {
+//			logger.info("Started: createOrUpdateMessage from MessageServiceImpl");
+//			if (Objects.nonNull(messageDto)) {
+//				messageEntity=modelMapper.map(messageDto, MessageEntity.class);
+//				
+//				Optional<MessageEntity> message = messageRepository.findById((long) messageDto.getId());
+//
+//				if (message.isPresent()) {
+//					MessageEntity fetchedMsgEntity = message.get();
+//					fetchedMsgEntity.setFromMessage(messageDto.getFromMessage());
+//					fetchedMsgEntity.setMessage(messageDto.getMessage());
+//					fetchedMsgEntity.setToMessage(messageDto.getToMessage());
+//
+//					fetchedMsgEntity = messageRepository.save(fetchedMsgEntity);
+//
+//					return fetchedMsgEntity;
+//				} else {
+//					messageEntity = messageRepository.save(messageEntity);
+//
+//					return messageEntity;
+//				}
+//			} else {
+//				messageEntity = messageRepository.save(messageEntity);
+//				return messageEntity;
+//			}
+//		} catch (Exception e) {
+//			logger.error("Exception in createOrUpdateMessage ", e);
+//		}
+//		logger.info("Ended: createOrUpdateMessage from MessageServiceImpl");
+//		return messageEntity;
+//	}
+//
+//	@Override
+//	public void deleteMessageById(int id) {
+//		try {
+//			logger.info("Started: deleteMessageById from MessageServiceImpl");
+//			Optional<MessageEntity> messageEntity = messageRepository.findById((long) id);
+//
+//			if (messageEntity.isPresent()) {
+//				messageRepository.deleteById((long) id);
+//				logger.info("Deleted "+id);
+//			}else {
+//				throw new MessageNotFoundException("Message for given id: "+id+" not found");
+//			}
+//			
+//		} catch (Exception e) {
+//			logger.error("Exception in deleteMessageById ", e);
+//		}
+//		logger.info("Ended: deleteMessageById from MessageServiceImpl");
+//	}
 
 }
