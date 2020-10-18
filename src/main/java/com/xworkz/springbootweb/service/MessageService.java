@@ -11,10 +11,10 @@ public interface MessageService {
 	
 	public List<MessageEntity> getAllMessages();
 
-	public MessageEntity getMessagesById(int id);
-
-	public MessageEntity createOrUpdateMessage(MessageDto messageDto);
-
-	public void deleteMessageById(int id);
+//	public MessageEntity getMessagesById(int id);
+//
+//	public MessageEntity createOrUpdateMessage(MessageDto messageDto);
+//
+//	public void deleteMessageById(int id);
 
 }

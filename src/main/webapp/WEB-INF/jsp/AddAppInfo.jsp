@@ -30,7 +30,8 @@
 <body>
 
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-		<a class="navbar-brand" href="#">X-workz</a>
+		<a class="navbar-brand" href="#">X-workz</a> <a class="nav-link"
+			href="AddBulkAppInfo.jsp">Bulk Upload</a>
 	</nav>
 	<br>
 
@@ -50,8 +51,8 @@
 				</div>
 
 				<div class="form-group col-md-6">
-					<label>Project Team Manager</label> <input type="text" class="form-control"
-						form="saveAppInfo" name="teamManagerName">
+					<label>Project Team Manager</label> <input type="text"
+						class="form-control" form="saveAppInfo" name="teamManagerName">
 				</div>
 
 				<div class="form-group col-md-6">
@@ -59,12 +60,12 @@
 						class="form-control" form="saveAppInfo" name="teamContactEmail"
 						required>
 				</div>
-			
+
 				<div class="form-group col-md-6">
-					<label>Project Version</label> <input type="text" class="form-control"
-						form="saveAppInfo" name="version">
+					<label>Project Version</label> <input type="text"
+						class="form-control" form="saveAppInfo" name="version">
 				</div>
-				
+
 				<div class="form-group col-md-6">
 					<label>Project Developed Date</label> <input type="date"
 						class="form-control" form="saveAppInfo" name="developedDate">
@@ -79,13 +80,13 @@
 				</div>
 
 				<div class="form-group col-md-6">
-					<label>Project Last Release</label> <input type="date" class="form-control"
-						form="saveAppInfo" name="lastRelease">
+					<label>Project Last Release</label> <input type="date"
+						class="form-control" form="saveAppInfo" name="lastRelease">
 				</div>
 
 				<div class="form-group col-md-6">
-					<label>Project Next Release</label> <input type="date" class="form-control"
-						form="saveAppInfo" name="nextRelease">
+					<label>Project Next Release</label> <input type="date"
+						class="form-control" form="saveAppInfo" name="nextRelease">
 				</div>
 
 			</div>
@@ -120,11 +121,12 @@
 					</tbody>
 				</table>
 			</div>
-		</div>
-		<input type="submit" class="btn btn-primary" name="save" value="Add"
-			form="saveAppInfo" />
+		<br>
+		<input type="submit" class="btn btn-primary" name="save"
+			value="Add App Info" form="saveAppInfo" /> <br>
+			<a class="nav-link" href="AddBulkAppInfo.jsp">Bulk Upload</a>
 	</div>
-	<br>
+	</div>
 	<br>
 	<div class="card-footer text-muted">Copy right x-workz</div>
 </body>
@@ -144,7 +146,8 @@
 			<div class="modal-body">
 				<div class="form-group">
 					<label>Environment:</label> <select class="form-control"
-						form="saveModal" class="col-form-label" name="environment" required>
+						form="saveModal" class="col-form-label" name="environment"
+						required>
 						<option value="dev">Development</option>
 						<option value="uat">Uat</option>
 						<option value="sit">Sit</option>
